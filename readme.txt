@@ -37,7 +37,7 @@ add_action('init', function(){
 	add_metadata_group( 'demo_meta', 'Page Options', array(
 		'capability' => 'edit_posts'
 	));
-	add_metadata_field( 'post_selection_ui_group', 'post_selection_ui_key', 'Title', 'psu', array( 'post_type' => 'custom_post_type', 'post_status' => 'publish', 'limit' => 3 ) );
+	add_metadata_field( 'demo_meta', 'post_selection_ui_key', 'Title', 'psu', array( 'post_type' => 'custom_post_type', 'post_status' => 'publish', 'limit' => 3 ) );
 	add_post_type_support( 'page', 'demo_meta' );
 	
 });

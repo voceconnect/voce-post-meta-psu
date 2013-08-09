@@ -58,7 +58,7 @@ if ( class_exists( 'Voce_Meta_API' ) ) {
 					<div class="widget-inside" style="display:block;">
 						<?php
 							echo post_selection_ui( $field->get_name(), $args );
-							echo ( isset( $args['description'] ) ) ? '<p class="description">' . $args['description'] . '</p>' : '';
+							echo ( isset( $args['description'] ) ) ? '<br><span class="description">' . $args['description'] . '</span>' : '';
 						?>
 					</div>
 				</div>

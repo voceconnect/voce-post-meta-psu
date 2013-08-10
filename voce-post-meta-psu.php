@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: Voce Meta Post Selection UI
+  Plugin Name: Voce Post Meta Post Selection UI
   Plugin URI: http://vocecommunications.com
   Description: Extends Voce Post Meta with a Post Selection UI
   Version: 0.1

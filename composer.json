@@ -1,0 +1,16 @@
+{
+    "name": "voceconnect/voce-post-meta-psu",
+    "description": "Post Meta API Extension for Post Selection UI fields",
+    "keywords": ["wordpress", "post meta"],
+    "license": "GPLv2+",
+    "authors": [
+        {
+            "name": "Kevin Langley Jr",
+            "email": "klangley@voceconnect.com"
+        }
+    ],
+    "type": "library",
+    "autoload": {
+        "files": ["voce-post-meta-psu.php"]
+    }
+}

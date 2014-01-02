@@ -10,6 +10,9 @@
         }
     ],
     "type": "library",
+    "require": {
+        "voceconnect/post-selection-ui": "~1.0"
+    },
     "autoload": {
         "files": ["voce-post-meta-psu.php"]
     }

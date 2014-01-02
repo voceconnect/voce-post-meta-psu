@@ -3,7 +3,7 @@
   Plugin Name: Voce Post Meta Post Selection UI
   Plugin URI: http://vocecommunications.com
   Description: Extends Voce Post Meta with a Post Selection UI
-  Version: 1.0.1
+  Version: 1.0.2
   Author: kevinlangleyjr
   Author URI: http://vocecommunications.com
   License: GPL2

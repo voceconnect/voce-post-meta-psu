@@ -42,5 +42,9 @@ add_action('init', function(){
 ?>
 ```
 
+**1.0.4**  
+*Added check for Voce_Meta_API.*
+
+
 **1.0**  
 *Initial version.*

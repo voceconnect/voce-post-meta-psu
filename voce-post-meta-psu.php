@@ -3,13 +3,15 @@
   Plugin Name: Voce Post Meta Post Selection UI
   Plugin URI: http://vocecommunications.com
   Description: Extends Voce Post Meta with a Post Selection UI
-  Version: 1.0.3
+  Version: 1.0.4
   Author: kevinlangleyjr
   Author URI: http://vocecommunications.com
   License: GPL2
  */
 
 if ( ! class_exists( 'Voce_Post_Meta_Post_Selection_UI' ) ) :
+
+add_action( 'admin_init', 'voce_meta_psu_check_voce_meta_api' );
 
 class Voce_Post_Meta_Post_Selection_UI {
 
@@ -70,4 +72,34 @@ if ( class_exists( 'Voce_Meta_API' ) ) {
 	}
 }
 
+
+
+/**
+ * Check if Voce Post Meta is loaded
+ * @method check_voce_meta_api
+ * @return void
+ */
+function voce_meta_psu_check_voce_meta_api() {
+	if ( !class_exists('Voce_Meta_API')) {
+  		add_action('admin_notices', 'voce_meta_psu_voce_meta_api_not_loaded' );
+  	}
+}
+
+/**
+ * Display message if Voce_Meta_API class (or Voce Post Meta plugin, more likely) is not available
+ * @method voce_meta_api_not_loaded
+ * @return void
+ */
+function voce_meta_psu_voce_meta_api_not_loaded() {
+    printf(
+      '<div class="error"><p>%s</p></div>',
+      __('Voce Post Meta Post Selection UI Plugin cannot be utilized without the <a href="https://github.com/voceconnect/voce-post-meta" target="_BLANK">Voce Post Meta</a> plugin.')
+    );
+}		
+
+
+
+
 endif;
+
+

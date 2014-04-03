@@ -93,13 +93,8 @@ function voce_meta_psu_check_voce_meta_api() {
 function voce_meta_psu_voce_meta_api_not_loaded() {
     printf(
       '<div class="error"><p>%s</p></div>',
-      __('Voce Post Meta Post Selection UI Plugin cannot be utilized without the <a href="https://github.com/voceconnect/voce-post-meta" target="_BLANK">Voce Post Meta</a> plugin.')
+      __('Voce Post Meta Post Selection UI Plugin cannot be utilized without the <a href="https://github.com/voceconnect/voce-post-meta" target="_blank">Voce Post Meta</a> plugin.')
     );
-}		
-
-
-
+}
 
 endif;
-
-

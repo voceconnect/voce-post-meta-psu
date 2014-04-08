@@ -3,7 +3,7 @@
   Plugin Name: Voce Post Meta Post Selection UI
   Plugin URI: http://vocecommunications.com
   Description: Extends Voce Post Meta with a Post Selection UI
-  Version: 1.0.3
+  Version: 1.0.4
   Author: kevinlangleyjr
   Author URI: http://vocecommunications.com
   License: GPL2
@@ -13,13 +13,53 @@ if ( ! class_exists( 'Voce_Post_Meta_Post_Selection_UI' ) ) :
 
 class Voce_Post_Meta_Post_Selection_UI {
 
-	public static function initialize() {
-		if( !class_exists( 'Post_Selection_UI' ) ){
-			_doing_it_wrong( __METHOD__, __( 'This plugin requires the Post Selection UI plugin to already be loaded' ), '3.5' );
-			return;
-		}
-
+	static function initialize() {
+		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 		add_filter( 'meta_type_mapping', array( __CLASS__, 'meta_type_mapping' ) );
+	}
+
+	/**
+	 * Add action for admin_notices
+	 * @method admin_init
+	 * @return void
+	 */
+	static function admin_init(){
+		add_action( 'admin_notices', array( __CLASS__, 'check_dependencies' ) );
+	}
+
+	/**
+	 * Display admin notice message
+	 * @method add_admin_notice
+	 * @param string $notice
+	 * @return void
+	 */
+	static function add_admin_notice( $notice ){
+		echo '<div class="error"><p>' . $notice . '</p></div>';
+	}
+
+	/**
+	 * Checks plugin dependencies
+	 * @method check_dependencies
+	 * @return void
+	 */
+	static function check_dependencies(){
+		$dependencies = array(
+			'Voce Post Meta' => array(
+				'url' => 'https://github.com/voceconnect/voce-post-meta',
+				'class' => 'Voce_Meta_API'
+			),
+			'Post Selection UI' => array(
+				'url' => 'https://github.com/voceconnect/post-selection-ui',
+				'class' => 'Post_Selection_UI'
+			)
+		);
+
+		foreach( $dependencies as $plugin => $plugin_data ){
+			if ( !class_exists( $plugin_data['class'] ) ){
+				$notice = sprintf( 'The Voce Post Meta Post Selection UI Plugin cannot be utilized without the <a href="%s" target="_blank">%s</a> plugin.', esc_url( $plugin_data['url'] ), $plugin );
+				self::add_admin_notice( __( $notice, 'voce-post-meta-psu' ) );
+			}
+		}
 	}
 
 	/**
@@ -27,11 +67,11 @@ class Voce_Post_Meta_Post_Selection_UI {
 	 * @param type $mapping
 	 * @return array
 	 */
-	public static function meta_type_mapping( $mapping ) {
+	static function meta_type_mapping( $mapping ) {
 		$mapping['psu'] = array(
 			'class' => 'Voce_Meta_Field',
 			'args' => array(
-				'display_callbacks' => array( 'voce_post_selection_ui_meta_field_display' ),
+				'display_callbacks' => array( array( __CLASS__, 'display_callback' ) ),
 				'sanitize_callbacks' => array( function($field, $old_value, $new_value, $post_id){
 					return $new_value;
 				} )
@@ -40,15 +80,10 @@ class Voce_Post_Meta_Post_Selection_UI {
 		return $mapping;
 	}
 
-}
-
-if ( class_exists( 'Voce_Meta_API' ) ) {
-	Voce_Post_Meta_Post_Selection_UI::initialize();
-
-	function voce_post_selection_ui_meta_field_display( $field, $value, $post_id ) {
+	static function display_callback( $field, $value, $post_id ) {
 		$args = array_merge( array(
 			'id' => $field->get_input_id(),
-			'selected' => (array) explode( ',', $value ),
+			'selected' => is_array( $value ) ? $value : (array) explode( ',', $value ),
 		), (array) $field->args );
 		?>
 		<div class="voce-post-meta-psu-container">
@@ -69,5 +104,6 @@ if ( class_exists( 'Voce_Meta_API' ) ) {
 		<?php
 	}
 }
+add_action( 'init', array( 'Voce_Post_Meta_Post_Selection_UI', 'initialize' ) );
 
 endif;

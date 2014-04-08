@@ -1,10 +1,10 @@
 === Voce Post Meta PSU ===
 
-Contributors: klangley, voceplatforms  
+Contributors: kevinlangleyjr, voceplatforms  
 Tags: meta, psu, post, selection  
 Requires at least: 3.0  
-Tested up to: 3.6  
-Stable tag: 1.0.3  
+Tested up to: 3.8.1  
+Stable tag: 1.0.4  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,9 +37,12 @@ add_action('init', function(){
 	add_metadata_group( 'demo_meta', 'Page Options', array(
 		'capability' => 'edit_posts'
 	));
-	add_metadata_field( 'demo_meta', 'post_selection_ui_key', 'Title', 'psu', array( 'post_type' => 'custom_post_type', 'post_status' => 'publish', 'limit' => 3 ) );
+	add_metadata_field( 'demo_meta', 'post_selection_ui_key', 'Title', 'psu', array(
+		'post_type' => 'custom_post_type',
+		'post_status' => 'publish',
+		'limit' => 3
+	) );
 	add_post_type_support( 'page', 'demo_meta' );
-	
 });
 ?>
 ```

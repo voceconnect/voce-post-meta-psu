@@ -17,7 +17,6 @@ class Voce_Post_Meta_Post_Selection_UI {
 		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 		add_filter( 'meta_type_mapping', array( __CLASS__, 'meta_type_mapping' ) );
 	}
-}
 
 	/**
 	 * Display message if dependencies are not loaded
@@ -38,6 +37,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 			'Post Selection UI' => array(
 				'url' => 'https://github.com/voceconnect/post-selection-ui',
 				'class' => 'Post_Selection_UI'
+			)
 		);
 
 		foreach( $dependencies as $plugin => $plugin_data ){
@@ -100,3 +100,5 @@ class Voce_Post_Meta_Post_Selection_UI {
 	}
 }
 add_action( 'init', array( 'Voce_Post_Meta_Post_Selection_UI', 'initialize' ) );
+
+endif;

@@ -19,7 +19,16 @@ class Voce_Post_Meta_Post_Selection_UI {
 	}
 
 	/**
-	 * Display message if dependencies are not loaded
+	 * Add action for admin_notices
+	 * @method admin_init
+	 * @return void
+	 */
+	static function admin_init(){
+		add_action( 'admin_notices', array( __CLASS__, 'check_dependencies' ) );
+	}
+
+	/**
+	 * Display admin notice message
 	 * @method add_admin_notice
 	 * @param string $notice
 	 * @return void
@@ -28,6 +37,11 @@ class Voce_Post_Meta_Post_Selection_UI {
 		echo '<div class="error"><p>' . $notice . '</p></div>';
 	}
 
+	/**
+	 * Checks plugin dependencies
+	 * @method check_dependencies
+	 * @return void
+	 */
 	static function check_dependencies(){
 		$dependencies = array(
 			'Voce Post Meta' => array(
@@ -46,15 +60,6 @@ class Voce_Post_Meta_Post_Selection_UI {
 				self::add_admin_notice( __( $notice, 'voce-post-meta-psu' ) );
 			}
 		}
-	}
-
-	/**
-	 * Check if Voce Post Meta is loaded
-	 * @method check_voce_meta_api
-	 * @return void
-	 */
-	static function admin_init(){
-		add_action( 'admin_notices', array( __CLASS__, 'check_dependencies' ) );
 	}
 
 	/**
@@ -78,7 +83,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 	static function display_callback( $field, $value, $post_id ) {
 		$args = array_merge( array(
 			'id' => $field->get_input_id(),
-			'selected' => (array) explode( ',', $value ),
+			'selected' => is_array( $value ) ? $value : (array) explode( ',', $value ),
 		), (array) $field->args );
 		?>
 		<div class="voce-post-meta-psu-container">

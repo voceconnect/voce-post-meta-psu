@@ -25,14 +25,14 @@ class Voce_Post_Meta_Post_Selection_UI {
 	 * @return void
 	 */
 	static function add_admin_notice( $notice ){
-		echo '<div class="error"><p' . $notice . '</p></div>';
+		echo '<div class="error"><p>' . $notice . '</p></div>';
 	}
 
 	static function check_dependencies(){
 		$dependencies = array(
 			'Voce Post Meta' => array(
 				'url' => 'https://github.com/voceconnect/voce-post-meta',
-				'class' => 'Voce_Post_Meta'
+				'class' => 'Voce_Meta_API'
 			),
 			'Post Selection UI' => array(
 				'url' => 'https://github.com/voceconnect/post-selection-ui',
@@ -42,7 +42,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 
 		foreach( $dependencies as $plugin => $plugin_data ){
 			if ( !class_exists( $plugin_data['class'] ) ){
-				$notice = sprintf( 'Voce Post Meta Post Selection UI Plugin cannot be utilized without the <a href="%s" target="_blank">%s</a> plugin.', esc_url( $plugin_data['url'] ), $plugin_data['class'] );
+				$notice = sprintf( 'The Voce Post Meta Post Selection UI Plugin cannot be utilized without the <a href="%s" target="_blank">%s</a> plugin.', esc_url( $plugin_data['url'] ), $plugin );
 				self::add_admin_notice( __( $notice, 'voce-post-meta-psu' ) );
 			}
 		}

@@ -3,7 +3,7 @@
   Plugin Name: Voce Post Meta Post Selection UI
   Plugin URI: http://vocecommunications.com
   Description: Extends Voce Post Meta with a Post Selection UI
-  Version: 1.0.4
+  Version: 1.0.5
   Author: kevinlangleyjr
   Author URI: http://vocecommunications.com
   License: GPL2
@@ -92,7 +92,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 			</div>
 			<div class="form-input">
 				<div class="widget">
-					<div class="widget-inside" style="display:block;">
+					<div class="widget-inside" style="display:block; border:0;">
 						<?php
 							echo post_selection_ui( $field->get_name(), $args );
 							echo ( !empty( $args['description'] ) ) ? '<br><span class="description">' . $args['description'] . '</span>' : '';

@@ -1,0 +1,113 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "a659d7aa7274737b71017518a6e24486",
+    "packages": [
+        {
+            "name": "voceconnect/post-selection-ui",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voceconnect/post-selection-ui.git",
+                "reference": "862b4e4c250372a19312473a747ed5f50b1b954c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voceconnect/post-selection-ui/zipball/862b4e4c250372a19312473a747ed5f50b1b954c",
+                "reference": "862b4e4c250372a19312473a747ed5f50b1b954c",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "post-selection-ui.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2+"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Pretty",
+                    "email": "mpretty@voceconnect.com"
+                }
+            ],
+            "description": "A WordPress library to display a user interface to easily select posts from any post type",
+            "time": "2014-07-08 16:33:23"
+        },
+        {
+            "name": "voceconnect/voce-post-meta",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voceconnect/voce-post-meta.git",
+                "reference": "fb7c8ed15d422d131f89fa5b8919d6685f9945e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voceconnect/voce-post-meta/zipball/fb7c8ed15d422d131f89fa5b8919d6685f9945e1",
+                "reference": "fb7c8ed15d422d131f89fa5b8919d6685f9945e1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "voce-post-meta.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2+"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Langley Jr",
+                    "email": "klangley@voceconnect.com"
+                },
+                {
+                    "name": "Jeff Stieler",
+                    "email": "jeff@voceconnect.com"
+                },
+                {
+                    "name": "Mark Parolisi",
+                    "email": "mark@voceconnect.com"
+                },
+                {
+                    "name": "Gary Smirny",
+                    "email": "gary@voceconnect.com"
+                },
+                {
+                    "name": "Michael Pretty",
+                    "email": "mpretty@voceconnect.com"
+                }
+            ],
+            "description": "Easily create post metaboxes and add fields",
+            "keywords": [
+                "post meta",
+                "wordpress"
+            ],
+            "time": "2014-09-02 18:36:53"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "prefer-stable": false,
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

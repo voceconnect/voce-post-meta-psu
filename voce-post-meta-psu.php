@@ -73,7 +73,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 			'args' => array(
 				'display_callbacks' => array( array( __CLASS__, 'display_callback' ) ),
 				'sanitize_callbacks' => array( function($field, $old_value, $new_value, $post_id){
-					return $new_value;
+					return empty($new_value) ? null : $new_value;
 				} )
 			)
 		);

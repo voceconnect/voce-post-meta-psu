@@ -11,7 +11,7 @@
     ],
     "type": "library",
     "require": {
-        "voceconnect/voce-post-meta": "~1.4",
+        "voceconnect/voce-post-meta": "~1.6.0",
         "voceconnect/post-selection-ui": "~1.0"
     },
     "autoload": {

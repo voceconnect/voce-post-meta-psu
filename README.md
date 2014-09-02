@@ -45,5 +45,8 @@ add_action('init', function(){
 ?>
 ```
 
+**1.1.0**
+*Now returns null for sanitize callback if the $new_value is empty*
+
 **1.0**  
 *Initial version.*

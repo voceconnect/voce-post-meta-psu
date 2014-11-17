@@ -3,7 +3,7 @@
   Plugin Name: Voce Post Meta Post Selection UI
   Plugin URI: http://vocecommunications.com
   Description: Extends Voce Post Meta with a Post Selection UI
-  Version: 1.1.0
+  Version: 1.2.0
   Author: kevinlangleyjr
   Author URI: http://vocecommunications.com
   License: GPL2
@@ -72,9 +72,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 			'class' => 'Voce_Meta_Field',
 			'args' => array(
 				'display_callbacks' => array( array( __CLASS__, 'display_callback' ) ),
-				'sanitize_callbacks' => array( function($field, $old_value, $new_value, $post_id){
-					return empty($new_value) ? null : $new_value;
-				} )
+				'sanitize_callbacks' => array( array( __CLASS__, 'sanitize_callback' ) )
 			)
 		);
 		return $mapping;
@@ -83,7 +81,7 @@ class Voce_Post_Meta_Post_Selection_UI {
 	static function display_callback( $field, $value, $post_id ) {
 		$args = array_merge( array(
 			'id' => $field->get_input_id(),
-			'selected' => is_array( $value ) ? $value : (array) explode( ',', $value ),
+			'selected' => is_array( $value ) ? $value : explode( ',', $value ),
 		), (array) $field->args );
 		?>
 		<div class="voce-post-meta-psu-container">
@@ -102,6 +100,15 @@ class Voce_Post_Meta_Post_Selection_UI {
 			</div>
 		</div>
 		<?php
+	}
+
+	static function sanitize_callback($field, $old_value, $new_value, $post_id){
+		$new_value = explode( ',', $new_value );
+		$ret_val = array();
+		foreach( $new_value as $value ){
+			$ret_val[] = (int) $value;
+		}
+		return $ret_val;
 	}
 }
 add_action( 'init', array( 'Voce_Post_Meta_Post_Selection_UI', 'initialize' ) );

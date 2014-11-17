@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a659d7aa7274737b71017518a6e24486",
+    "hash": "e45ec172d379aefae961f604d1b32935",
     "packages": [
         {
             "name": "voceconnect/post-selection-ui",
-            "version": "1.0.9",
+            "version": "1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voceconnect/post-selection-ui.git",
-                "reference": "862b4e4c250372a19312473a747ed5f50b1b954c"
+                "reference": "22a33b79537ea80e40d4b19e3aa3d207e8e6e035"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voceconnect/post-selection-ui/zipball/862b4e4c250372a19312473a747ed5f50b1b954c",
-                "reference": "862b4e4c250372a19312473a747ed5f50b1b954c",
+                "url": "https://api.github.com/repos/voceconnect/post-selection-ui/zipball/22a33b79537ea80e40d4b19e3aa3d207e8e6e035",
+                "reference": "22a33b79537ea80e40d4b19e3aa3d207e8e6e035",
                 "shasum": ""
             },
             "type": "library",
@@ -32,25 +32,33 @@
             ],
             "authors": [
                 {
-                    "name": "Mike Pretty",
+                    "name": "Gary Smirny",
+                    "email": "gary@voceconnect.com"
+                },
+                {
+                    "name": "Mat Gargano",
+                    "email": "mat@voceconnect.com"
+                },
+                {
+                    "name": "Michael Pretty",
                     "email": "mpretty@voceconnect.com"
                 }
             ],
             "description": "A WordPress library to display a user interface to easily select posts from any post type",
-            "time": "2014-07-08 16:33:23"
+            "time": "2014-11-14 16:34:22"
         },
         {
             "name": "voceconnect/voce-post-meta",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voceconnect/voce-post-meta.git",
-                "reference": "fb7c8ed15d422d131f89fa5b8919d6685f9945e1"
+                "reference": "8864457569305a586cd30e3a6c9a65582cd50644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voceconnect/voce-post-meta/zipball/fb7c8ed15d422d131f89fa5b8919d6685f9945e1",
-                "reference": "fb7c8ed15d422d131f89fa5b8919d6685f9945e1",
+                "url": "https://api.github.com/repos/voceconnect/voce-post-meta/zipball/8864457569305a586cd30e3a6c9a65582cd50644",
+                "reference": "8864457569305a586cd30e3a6c9a65582cd50644",
                 "shasum": ""
             },
             "type": "library",
@@ -90,24 +98,14 @@
                 "post meta",
                 "wordpress"
             ],
-            "time": "2014-09-02 18:36:53"
+            "time": "2014-10-01 17:09:44"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }

@@ -4,7 +4,7 @@ Contributors: kevinlangleyjr, voceplatforms
 Tags: meta, psu, post, selection  
 Requires at least: 3.0  
 Tested up to: 3.9.2  
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,11 +48,14 @@ add_action('init', function(){
 ```
 
 == Changelog ==
-= 1.1.1 =
+= 1.2.0 =  
+*Separate sanitize callback into its own method insetad of anonymous function. Adding better sanitization of post selection UI value.*
+
+= 1.1.1 =  
 *Updated composer.json to require VPM ~1.6 instead of ~1.6.0*
 
-= 1.1.0 =
+= 1.1.0 =  
 * Now returns null for sanitize callback if the $new_value is empty
 
-= 1.0 =  
+= 1.0.0 =  
 * Initial release

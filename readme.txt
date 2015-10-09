@@ -3,8 +3,8 @@
 Contributors: kevinlangleyjr, voceplatforms  
 Tags: meta, psu, post, selection  
 Requires at least: 3.0  
-Tested up to: 4.0  
-Stable tag: 1.2.0  
+Tested up to: 4.3.1  
+Stable tag: 1.3.0  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,9 @@ add_action('init', function(){
 ```
 
 == Changelog ==
+= 1.3.3 =  
+*Better handling around autoload files when required by multiple project dependencies*
+
 = 1.2.0 =  
 *Separate sanitize callback into its own method insetad of anonymous function. Adding better sanitization of post selection UI value.*
 

@@ -9,8 +9,6 @@
   License: GPL2
  */
 
-if ( ! class_exists( 'Voce_Post_Meta_Post_Selection_UI' ) ) :
-
 class Voce_Post_Meta_Post_Selection_UI {
 
 	static function initialize() {
@@ -112,5 +110,3 @@ class Voce_Post_Meta_Post_Selection_UI {
 		return $ret_val;
 	}
 }
-
-endif;
